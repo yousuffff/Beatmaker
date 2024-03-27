@@ -65,13 +65,13 @@ svg{
   background-color: rgb(197, 175, 235);
 }
 .kick-pad.active{
-  background-color: rgb(38, 230, 166);
+  background-color: rgb(12, 201, 138);
 }
 .snare-pad.active{
   background-color: rgb(70, 135, 225);
 }
 .hihat-pad.active{
-  background-color: rgb(158, 107, 247);
+  background-color: rgb(165, 120, 244);
 }
 .control button{
   padding: 1rem;
@@ -91,6 +91,7 @@ select{
   color: white;
 }
 .pad{
+  
   transition: all 0.5s ease;
 }
 .play{
@@ -102,3 +103,10 @@ select{
   cursor: pointer;
   border-radius: 5px;
 }
+ @keyframes playTrack{
+  from{
+    transform: scale(1);
+  }to{
+    transform: scale(1.2);
+  }
+ }
