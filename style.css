@@ -56,10 +56,12 @@ svg{
   cursor: pointer;
 }
 .kick-pad{
-  background-color: aquamarine;
+  background-color: #7fffd4;
+
 }
+
 .snare-pad{
-  background-color: rgb(144, 182, 235);
+  background-color: #90b6eb;
 }
 .hihat-pad{
   background-color: rgb(197, 175, 235);
@@ -89,6 +91,9 @@ select{
   font-size: 1rem;
   background-color: #272727;
   color: white;
+}
+.mute.active{
+  background-color: rgb(64, 62, 62);
 }
 .pad{
   
