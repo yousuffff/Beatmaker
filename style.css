@@ -5,9 +5,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* overflow: hidden; */
 }
 
 body{
+  border: 10px solid #fff;
   background-color: #272727;
   color: aliceblue;
   font-family: "Roboto", sans-serif;
@@ -52,7 +54,7 @@ svg{
   border-radius: 5px;
   height: 5rem;
   width: 5rem;
-  margin: 1rem 0.5rem;
+  margin: 0.5rem 0.5rem;
   cursor: pointer;
 }
 .kick-pad{
@@ -109,7 +111,7 @@ select{
   border-radius: 5px;
 }
 .tempo{
-  margin: 3rem;
+  margin: 1rem;
   width: 30%;
 }
 .tempo-slider{
