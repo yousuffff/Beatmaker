@@ -13,6 +13,7 @@ class DrumKit {
     this.isPlaying = false;
     this.selects = document.querySelectorAll('select');
     this.muteBtn = document.querySelectorAll('.mute')
+    this.tempo = document.querySelector('.tempo-slider')
   }
   activePad() {
     this.classList.toggle('active')
@@ -74,7 +75,11 @@ class DrumKit {
   muteSound(e) {
     const muteIndex = e.target.getAttribute('data-track')
     e.target.classList.toggle('active')
+    // e.target.children[0].classList.toggle("fa-solid fa-volume-high")
+    console.log(e.target.children)
+
     if (e.target.classList.contains('active')) {
+
       switch (muteIndex) {
         case '0':
           this.kickAudio.volume = 0;
@@ -86,7 +91,9 @@ class DrumKit {
           this.hihatAudio.volume = 0;
           break;
       }
+      // this.icon.classList.replace("fa-volume-xmark",  "fa-volume-high")
     } else {
+
       switch (muteIndex) {
         case '0':
           this.kickAudio.volume = 1;
@@ -99,6 +106,19 @@ class DrumKit {
           break;
       }
     }
+  }
+  changeTempo(e) {
+    const tempoText = document.querySelector('.tempo-no');
+    this.bpm = e.target.value;
+    tempoText.innerText = e.target.value;
+  }
+  UpdateTempo() {
+    clearInterval(this.isPlaying);
+    this.isPlaying = false;
+    if (this.playbtn.classList.contains('active')) {
+      this.start();
+    }
+
   }
 
   // addHandler() {
@@ -125,6 +145,7 @@ drumkit.pads.forEach(pad => {
 
 })
 drumkit.playbtn.addEventListener('click', () => {
+  drumkit.playbtn.classList.toggle('active')
   drumkit.start();
 });
 drumkit.selects.forEach(select => {
@@ -139,4 +160,12 @@ drumkit.muteBtn.forEach(mute => {
     drumkit.muteSound(e)
   })
 })
-console.log(drumkit.muteBtn)
+// console.log(drumkit.icon)
+drumkit.tempo.addEventListener('input', function (e) {
+
+  drumkit.changeTempo(e)
+})
+drumkit.tempo.addEventListener('change', function (e) {
+
+  drumkit.UpdateTempo(e)
+})

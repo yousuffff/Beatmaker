@@ -41,7 +41,7 @@
       <div class="control">
         <h1>Snare</h1>
         <button data-track="1" class="mute snare-volume">
-          <i class="fa-solid fa-volume-xmark"></i>
+          <i class="fa-solid fa-volume-xmark  fa-volume-high "></i>
         </button>
         <select name="snare-select" id="snare-select">
           <option value="./Sounds/snare-vinyl02.wav">Vinyl Snare</option>
@@ -85,6 +85,10 @@
       </div>
     </div>
     <button class="play">Play</button>
+    <div class="tempo">
+      <input type="range" value="150" max="300" min="20" class="tempo-slider">
+      <p>Tempo : <span class="tempo-no">150</span> </p>
+    </div>
   </div>
   <audio class="kick-audio" src="./Sounds/kick-classic.wav"></audio>
   <audio class="snare-audio" src="./Sounds/snare-acoustic01.wav"></audio>
